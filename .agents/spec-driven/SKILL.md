@@ -117,6 +117,15 @@ I've created spec/requirements-1.md.
 - [Key point 2]
 - [Key point 3]
 
+**Quality Check:**
+✓ Coverage: [score]/10 - [brief assessment]
+✓ Specificity: [score]/10 - [brief assessment]
+✓ Completeness: [score]/10 - [brief assessment]
+✓ Clarity: [score]/10 - [brief assessment]
+✓ Edge Cases: [score]/10 - [brief assessment]
+
+Overall: [sum]/50
+
 Type "show spec/requirements-1.md" to see the full file.
 
 What would you like to change? Examples:
@@ -134,6 +143,15 @@ I've updated to spec/requirements-2.md.
 - Added: US-4 - [brief description]
 - Modified: US-2 acceptance criteria - [what changed]
 - Removed: [what was removed, if any]
+
+**Quality Check:**
+✓ Coverage: [score]/10 - [brief assessment]
+✓ Specificity: [score]/10 - [brief assessment]
+✓ Completeness: [score]/10 - [brief assessment]
+✓ Clarity: [score]/10 - [brief assessment]
+✓ Edge Cases: [score]/10 - [brief assessment]
+
+Overall: [sum]/50
 
 Type "show spec/requirements-2.md" to see the full file.
 
@@ -268,6 +286,15 @@ I've created spec/design-1.md.
 - Architecture: [brief]
 - Key data flows: [brief]
 
+**Quality Check:**
+✓ Requirements Coverage: [score]/10 - [brief assessment]
+✓ Data Model: [score]/10 - [brief assessment]
+✓ Error Handling: [score]/10 - [brief assessment]
+✓ Security: [score]/10 - [brief assessment]
+✓ Testability: [score]/10 - [brief assessment]
+
+Overall: [sum]/50
+
 Type "show spec/design-1.md" to see the full file.
 
 What would you like to change?
@@ -280,6 +307,15 @@ I've updated to spec/design-2.md.
 **Changes since v1:**
 - Added: [component/domain/flow]
 - Modified: [what changed]
+
+**Quality Check:**
+✓ Requirements Coverage: [score]/10 - [brief assessment]
+✓ Data Model: [score]/10 - [brief assessment]
+✓ Error Handling: [score]/10 - [brief assessment]
+✓ Security: [score]/10 - [brief assessment]
+✓ Testability: [score]/10 - [brief assessment]
+
+Overall: [sum]/50
 
 Type "show spec/design-2.md" to see the full file.
 
@@ -366,6 +402,15 @@ I've created spec/tasks-1.md.
 - [Number] tasks across [number] iterations
 - First iteration focuses on: [brief]
 
+**Quality Check:**
+✓ Requirements Traceability: [score]/10 - [brief assessment]
+✓ Granularity: [score]/10 - [brief assessment]
+✓ Sequencing: [score]/10 - [brief assessment]
+✓ Actionability: [score]/10 - [brief assessment]
+✓ Coverage: [score]/10 - [brief assessment]
+
+Overall: [sum]/50
+
 Type "show spec/tasks-1.md" to see the full file.
 
 What would you like to change?
@@ -396,7 +441,205 @@ Ready to implement when you are. Would you like to:
 - Adjust task ordering or granularity
 ```
 
-## Key Principles
+## Quality Evaluation
+
+After generating each document (requirements, design, tasks), automatically run quality checks and report scores.
+
+### Requirements Quality Checklist
+
+Run these checks on requirements documents:
+
+```
+REQUIREMENTS QUALITY CHECK:
+
+✓ Coverage: All user journeys identified? [score/10]
+✓ Specificity: Acceptance criteria testable? [score/10]
+✓ Completeness: Non-functional requirements included? [score/10]
+✓ Clarity: No ambiguity in user stories? [score/10]
+✓ Edge Cases: Error scenarios covered? [score/10]
+
+Overall Score: X/50
+
+Issues Found:
+- [Any gaps or improvements needed]
+```
+
+**Key Checks:**
+- Each user story has clear "As a/I want/So that" format
+- Each user story has ≥3 acceptance criteria
+- Acceptance criteria are measurable/testable
+- Non-functional requirements (performance, security, scalability) present
+- "Out of Scope" section explicitly defined
+
+**Scoring Guidelines:**
+
+**Coverage (0-10):**
+- 10: All core features covered with clear user journeys
+- 7-9: Most features covered, minor gaps
+- 4-6: Significant gaps in feature coverage
+- 0-3: Missing major user journeys
+
+**Specificity (0-10):**
+- 10: All acceptance criteria are measurable/testable
+- 7-9: Most AC testable, 1-2 vague
+- 4-6: Several AC lack clear testability
+- 0-3: AC mostly vague or missing
+
+**Completeness (0-10):**
+- 10: Performance, security, scalability, availability all addressed
+- 7-9: 3 of 4 non-functional areas covered
+- 4-6: 1-2 non-functional areas covered
+- 0-3: Non-functional requirements missing
+
+**Clarity (0-10):**
+- 10: All user stories follow "As a/I want/So that" format
+- 7-9: Most follow format, 1-2 deviations
+- 4-6: Several stories poorly structured
+- 0-3: Inconsistent or unclear format
+
+**Edge Cases (0-10):**
+- 10: Error scenarios, invalid inputs, boundary conditions covered
+- 7-9: Most error cases covered, 1-2 missing
+- 4-6: Minimal error handling addressed
+- 0-3: No error scenarios considered
+
+### Design Quality Checklist
+
+```
+DESIGN QUALITY CHECK:
+
+✓ Requirements Coverage: All US addressed? [score/10]
+✓ Data Model: Entities/relationships defined? [score/10]
+✓ Error Handling: Failure modes addressed? [score/10]
+✓ Security: Auth/authz/data protection covered? [score/10]
+✓ Testability: Testing strategy included? [score/10]
+
+Overall Score: X/50
+
+Issues Found:
+- [Any gaps or improvements needed]
+```
+
+**Key Checks:**
+- Requirements traceability table is complete (no orphaned US)
+- Domain model identifies bounded contexts and entities
+- Critical data flows documented (trigger → steps → outcome)
+- Error categories defined with handling strategy
+- Security considerations address auth, authz, and data protection
+
+**Scoring Guidelines:**
+
+**Requirements Coverage (0-10):**
+- 10: All user stories traced to design components
+- 7-9: Most traced, 1-2 orphaned stories
+- 4-6: Several requirements lack design coverage
+- 0-3: Design traceability missing
+
+**Data Model (0-10):**
+- 10: Clear entities, relationships, and attributes defined
+- 7-9: Core model complete, 1-2 details missing
+- 4-6: Incomplete or vague data model
+- 0-3: Data model missing or extremely basic
+
+**Error Handling (0-10):**
+- 10: Error categories, recovery strategies, and monitoring defined
+- 7-9: Error handling present, 1-2 areas need detail
+- 4-6: Basic error handling, no recovery strategy
+- 0-3: Error handling not addressed
+
+**Security (0-10):**
+- 10: Authentication, authorization, data protection, and threats addressed
+- 7-9: 3 of 4 security areas covered
+- 4-6: Basic auth mentioned, incomplete coverage
+- 0-3: Security not considered
+
+**Testability (0-10):**
+- 10: Unit, integration, and E2E testing strategies defined
+- 7-9: Testing approach clear, 1-2 levels missing detail
+- 4-6: Minimal testing strategy
+- 0-3: No testing strategy
+
+### Tasks Quality Checklist
+
+```
+TASKS QUALITY CHECK:
+
+✓ Requirements Traceability: All tasks link to US? [score/10]
+✓ Granularity: Tasks 1-4 hours each? [score/10]
+✓ Sequencing: Dependencies respected? [score/10]
+✓ Actionability: Steps are concrete? [score/10]
+✓ Coverage: All requirements have tasks? [score/10]
+
+Overall Score: X/50
+
+Issues Found:
+- [Any gaps or improvements needed]
+```
+
+**Key Checks:**
+- Every task has "Relevant Requirements" with US-* references
+- No task is vague (e.g., "Implement X" without specifics)
+- Task ordering allows sequential implementation
+- No requirement is left without corresponding tasks
+- Each task has concrete checkbox steps (not subtask headers)
+
+**Scoring Guidelines:**
+
+**Requirements Traceability (0-10):**
+- 10: Every task has "Relevant Requirements" with US-* references
+- 7-9: Most tasks traced, 1-2 missing links
+- 4-6: Several tasks lack requirement links
+- 0-3: Traceability largely missing
+
+**Granularity (0-10):**
+- 10: All tasks are 1-4 hours, clearly scoped
+- 7-9: Most tasks appropriate size, 1-2 too broad
+- 4-6: Several tasks unclear scope or too large
+- 0-3: Tasks are vague or monolithic
+
+**Sequencing (0-10):**
+- 10: Tasks ordered logically, dependencies clear
+- 7-9: Most sequencing correct, 1-2 issues
+- 4-6: Some dependency issues or rework needed
+- 0-3: Task order doesn't make sense
+
+**Actionability (0-10):**
+- 10: Concrete checkbox steps, not vague headers
+- 7-9: Steps mostly concrete, 1-2 vague
+- 4-6: Several tasks lack concrete steps
+- 0-3: Tasks are just descriptions without steps
+
+**Coverage (0-10):**
+- 10: All user stories have corresponding tasks
+- 7-9: Most stories covered, 1-2 missing tasks
+- 4-6: Several requirements lack implementation tasks
+- 0-3: Large gaps between requirements and tasks
+
+### Reporting Quality Scores
+
+After writing each document, include quality evaluation:
+
+**Example (after requirements):**
+```
+I've created spec/requirements-1.md.
+
+**Summary:**
+- 6 user stories covering auth and book CRUD
+- Performance, security, and scalability requirements included
+
+**Quality Check:**
+✓ Coverage: 10/10 - All core features identified
+✓ Specificity: 8/10 - Most AC testable, US-3 needs more detail
+✓ Completeness: 10/10 - Non-functional requirements present
+✓ Clarity: 9/10 - Clear user story format throughout
+✓ Edge Cases: 6/10 - Missing error handling scenarios
+
+Overall: 43/50
+
+Type "show spec/requirements-1.md" to see the full file.
+
+What would you like to change?
+```
 
 ### Be Interactive
 Don't dump a 100-line spec without checking in. After each section, show summary and ask if the user wants to:
@@ -424,6 +667,62 @@ All files are in `spec/` directory:
 2. Apply changes
 3. **Write to the NEXT version number** (e.g., `spec/requirements-2.md`)
 4. **Never overwrite the existing file**
+
+### Memory & Evolution
+
+After confirming each phase, save patterns to memory for future reuse:
+
+```
+After requirements-confirmed.md:
+- Save user story templates that got high quality scores
+- Store acceptance criteria patterns that were approved
+- Track which non-functional requirements were most relevant
+
+After design-confirmed.md:
+- Save architecture patterns and domain models
+- Store data flow templates
+- Track error handling strategies
+
+After tasks-confirmed.md:
+- Save task granularity that worked well
+- Store sequencing patterns
+- Track which requirements-to-task mappings were effective
+```
+
+**Memory File Location:** `spec/.memory/` (auto-created)
+
+```
+spec/.memory/
+  requirements-patterns.md
+  design-patterns.md
+  task-patterns.md
+  quality-trends.md
+```
+
+**When starting a new spec:**
+1. Check if memory patterns exist
+2. Suggest relevant templates from memory
+3. Adapt patterns to current project context
+4. After confirmation, update memory with new learnings
+
+**Example Memory Usage:**
+```
+Found 3 relevant patterns from previous projects:
+
+1. User Auth Stories (from e-commerce project)
+   - 9/10 average quality score
+   - Want to use this pattern?
+
+2. RESTful CRUD Tasks (from API project)
+   - 47/50 average quality score
+   - Want to adapt this?
+
+3. Layered Architecture Design (from microservices project)
+   - 45/50 average quality score
+   - Want to reference this?
+
+Type "use 1", "use 2", "use all", or "skip" to continue.
+```
 
 ### Show Changes, Not Full Files
 By default, show only summaries and changes. Let users request full files with "show [filename]".
